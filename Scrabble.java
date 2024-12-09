@@ -1,3 +1,5 @@
+
+
 /*
  * RUNI version of the Scrabble game.
  */
@@ -46,17 +48,40 @@ public class Scrabble {
         System.out.println(NUM_OF_WORDS + " words loaded.");
 	}
 
-	// Checks if the given word is in the dictionary.
-	public static boolean isWordInDictionary(String word) {
-		//// Replace the following statement with your code
-		return false;
+	public static boolean isStringEqual(String str1, String str2){
+		
+		if(str1.length() != str2.length()){
+			return false;
+		}
+		for (int i = 0; i < str1.length(); i++) {
+			if(str1.charAt(i) != str2.charAt(i)){
+				return false;
+			}	
+		}
+
+		return true;
 	}
+
+	// Checks if the given word is in the dictionary..
+	public static boolean isWordInDictionary(String word) {
+		
+		word = word.toLowerCase();
+		for (int i = 0; i < NUM_OF_WORDS; i++) {
+			if(isStringEqual(DICTIONARY[i], word)){
+				return true;
+			}
+		}
+
+		return false;
+		}
+
 	
 	// Returns the Scrabble score of the given word.
 	// If the length of the word equals the length of the hand, adds 50 points to the score.
 	// If the word includes the sequence "runi", adds 1000 points to the game.
 	public static int wordScore(String word) {
-		//// Replace the following statement with your code
+		
+	
 		return 0;
 	}
 
@@ -118,6 +143,7 @@ public class Scrabble {
 
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
+		testBuildingTheDictionary();
 		////testBuildingTheDictionary();  
 		////testScrabbleScore();    
 		////testCreateHands();  
