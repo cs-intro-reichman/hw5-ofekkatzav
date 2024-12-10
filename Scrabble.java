@@ -65,72 +65,72 @@ public class Scrabble {
 	// Checks if the given word is in the dictionary..
 	public static boolean isWordInDictionary2(String word) {
 		
-		word = word.toLowerCase();
 		for (int i = 0; i < NUM_OF_WORDS; i++) {
-			if(isStringEqual(DICTIONARY[i], word)){
+			if(isStringEqual(DICTIONARY[i].toLowerCase(), word.toLowerCase())){
 				return true;
 			}
 		}
 
 		return false;
 		}
-		public static boolean isWordInDictionary(String word) {
+	public static boolean isWordInDictionary(String word) {
+	
+		word = word.toLowerCase();
+		for (int i = 0; i < NUM_OF_WORDS; i++) {
+			if(word.equals(DICTIONARY[i])){
+				return true;
+			}
+		}
+
+		return false;
+		}
+	private static boolean isContainRuni(String word) {
 		
-			word = word.toLowerCase();
-			for (int i = 0; i < NUM_OF_WORDS; i++) {
-				if(word.equals(DICTIONARY[i])){
+		if (word == null || word.isEmpty()) {
+			return false; 
+		}
+		word = word.toLowerCase();
+		String targetString = "runi";
+		int targetIndex=0;
+		for (int i = 0; i < word.length(); i++) {
+			if(word.charAt(i) == targetString.charAt(targetIndex)){
+				targetIndex++;
+				if(targetIndex == targetString.length()){
 					return true;
 				}
 			}
-	
-			return false;
-			}
-
-	    /** If str1 contains str2, returns true; otherwise returns false. */
-	public static boolean contains(String str1, String str2) { 
-															
-		String str3 ="";                                                      
-		
-		if(str1.length() < str2.length())
-			return false;
-
-		for (int i = 0; i <= str1.length() - str2.length(); i++) {
-			if(str2.length() == str3.length())
-				break;
-			str3 = "";
-			for(int j = 0; j < str2.length(); j++){
-				if((str1.charAt(i+j) == str2.charAt(j))){
-					str3 += str1.charAt(i+j);
-				}else {
-					break;
-				}
-			}
 		}
-		
-		if(str2.length() != str3.length())
-			return false;
-		
-		for (int i = 0; i < Math.min(str2.length(),str3.length()); i++) {
-			if(str2.charAt(i) != str3.charAt(i)){
-				return false;
-			}
-		}
-		return true;
-	}
+
+		return false;
+		}	
+
 
 	// Returns the Scrabble score of the given word.
 	// If the length of the word equals the length of the hand, adds 50 points to the score.
 	// If the word includes the sequence "runi", adds 1000 points to the game.
 	public static int wordScore(String word) {
 		int score = 0;
+
+		word = word.toLowerCase();
+	
 		for (int i = 0; i < word.length(); i++) {
-			int charAt = word.charAt(i) - 'a';
-			score += SCRABBLE_LETTER_VALUES[charAt] * word.length();
+			char c = word.charAt(i);
+			if (c >= 'a' && c <= 'z') { 
+				int charAt = c - 'a';
+				score += SCRABBLE_LETTER_VALUES[charAt];
+			}
 		}
-		if(word.length() == HAND_SIZE)
+		score *=  word.length();
+	
+		
+		if (word.length() == HAND_SIZE) {
 			score += 50;
-		if(word.contains("runi"))
-			score +=1000;
+		}
+	
+		if (isContainRuni(word.toLowerCase())) {
+			score += 1000;
+		}
+	
 		return score;
 	}
 
@@ -138,8 +138,10 @@ public class Scrabble {
 	// into it, at random indexes, the letters 'a' and 'e'
 	// (these two vowels make it easier for the user to construct words)
 	public static String createHand() {
-		//// Replace the following statement with your code
-		return null;
+		String createHand = MyString.randomStringOfLetters(HAND_SIZE-2);
+		createHand = MyString.insertRandomly('a',createHand);
+		createHand = MyString.insertRandomly('e',createHand);
+		return createHand;
 	}
 	
     // Runs a single hand in a Scrabble game. Each time the user enters a valid word:
