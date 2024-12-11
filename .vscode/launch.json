@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyString",
+            "request": "launch",
+            "mainClass": "MyString",
+            "projectName": "hw5-ofekkatzav_b5800303"
+        },
+        {
+            "type": "java",
             "name": "Scrabble",
             "request": "launch",
             "mainClass": "Scrabble",
@@ -17,7 +24,7 @@
             "request": "launch",
             "mainClass": "ScrabbleTest",
             "projectName": "hw5-ofekkatzav_b5800303",
-            "args": "playGameWithMockInput"
+            "args": "playHandWithMockInput"
         },
         {
             "type": "java",
