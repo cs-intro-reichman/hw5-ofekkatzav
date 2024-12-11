@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Scrabble",
+            "request": "launch",
+            "mainClass": "Scrabble",
+            "projectName": "hw5-ofekkatzav_b5800303"
+        },
+        {
+            "type": "java",
+            "name": "ScrabbleTest",
+            "request": "launch",
+            "mainClass": "ScrabbleTest",
+            "projectName": "hw5-ofekkatzav_b5800303",
+            "args": "playGameWithMockInput"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -51,8 +66,7 @@
             "request": "launch",
             "mainClass": "ScrabbleTest",
             "projectName": "hw5-ofekkatzav_38bc9c64",
-            "args":"createHand"
-            
+            "args": "createHand"
         }
     ]
 }
