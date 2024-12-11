@@ -1,0 +1,79 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MyString",
+            "request": "launch",
+            "mainClass": "MyString",
+            "projectName": "hw5-ofekkatzav_b5800303"
+        },
+        {
+            "type": "java",
+            "name": "Scrabble",
+            "request": "launch",
+            "mainClass": "Scrabble",
+            "projectName": "hw5-ofekkatzav_b5800303"
+        },
+        {
+            "type": "java",
+            "name": "ScrabbleTest",
+            "request": "launch",
+            "mainClass": "ScrabbleTest",
+            "projectName": "hw5-ofekkatzav_b5800303",
+            "args": "playHandWithMockInput"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "Demo",
+            "projectName": "hw5-ofekkatzav_38bc9c64"
+        },
+        {
+            "type": "java",
+            "name": "In",
+            "request": "launch",
+            "mainClass": "In",
+            "projectName": "hw5-ofekkatzav_38bc9c64"
+        },
+        {
+            "type": "java",
+            "name": "MyString",
+            "request": "launch",
+            "mainClass": "MyString",
+            "projectName": "hw5-ofekkatzav_38bc9c64"
+        },
+        {
+            "type": "java",
+            "name": "MyStringTest",
+            "request": "launch",
+            "mainClass": "MyStringTest",
+            "projectName": "hw5-ofekkatzav_38bc9c64"
+        },
+        {
+            "type": "java",
+            "name": "Scrabble",
+            "request": "launch",
+            "mainClass": "Scrabble",
+            "projectName": "hw5-ofekkatzav_38bc9c64"
+        },
+        {
+            "type": "java",
+            "name": "ScrabbleTest",
+            "request": "launch",
+            "mainClass": "ScrabbleTest",
+            "projectName": "hw5-ofekkatzav_38bc9c64",
+            "args": "createHand"
+        }
+    ]
+}
