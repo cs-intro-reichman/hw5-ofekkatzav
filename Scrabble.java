@@ -141,7 +141,7 @@ public class Scrabble {
 				break;
 			}
 			if(!isWordInDictionary(input)){
-				System.out.println("No such word in the dictionary. Try again.");
+				System.out.println("Invalid word. Try again.");
 			}
 			else{
 				if(isContainFreq(hand,input)){
